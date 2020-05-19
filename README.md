@@ -2,4 +2,4 @@
 
 使用说明：
 
-wget https://www.fiisi.com/gost/gosttest/gost.sh && chmod +x gost.sh && bash gost.sh
+wget https://github.com/gd0772/gost/blob/master/gost.sh && chmod +x gost.sh && bash gost.sh
