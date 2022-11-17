@@ -1,162 +1,772 @@
 root@racknerd-742893:~# curl -H 'Api-Key: API_xxxxx' -H 'Client-Key: CK_xxxxx' -A 'OneApi/1.0' https://api.oneprovider.com/server/action -d"server_id=服务器ID&action=get_overview"
+
 {
   "result": "success",
-  "response": {
-    "server_info": {
-      "os": {
-        "name": "debian",
-        "version": "9",
-        "display": "Debian 9, 64 bits",
-        "panel_url": ""
-      },
-      "power": "ON",
-      "boot_mode": "normal",
-      "last_reboot": "2022-11-17T20:30:54.000Z",
-      "hardware_watch": true,
-      "network": {
-        "ip": [
-          "195.154.250.113"
-        ],
-        "private": [
-        ],
-        "ipfo": [
-          "51.158.29.55"
-        ]
-      },
-      "ip": [
-        {
-          "address": "195.154.250.113",
-          "type": "public",
-          "reverse": "195-154-250-113.rev.poneytelecom.eu.",
-          "mac": "b8:ac:6f:94:c5:b0",
-          "switch_port_state": "up"
-        },
-        {
-          "address": "51.158.29.55",
-          "type": "failover",
-          "reverse": "51-158-29-55.rev.poneytelecom.eu.",
-          "mac": "52:54:00:01:01:72",
-          "destination": "195.154.250.113",
-          "status": "active"
-        }
-      ],
-      "raid_controllers": [
-        {
-          "raid_level": "NORAID",
-          "min": 1
-        },
-        {
-          "raid_level": "RAID0",
-          "min": 2
-        },
-        {
-          "raid_level": "RAID1",
-          "min": 2
-        }
-      ],
-      "rescue_credentials": {
-        "login": null,
-        "password": null,
-        "protocol": null,
-        "ip": null
-      },
-      "bmc": {
-        "session_key": null
-      },
-      "install_status": "installed",
-      "domain": "localhost",
-      "next_due_date": "2023-01-31",
-      "status": "Active",
-      "isIPMICompatible": "1",
-      "raid_level": "NORAID"
-    },
-    "operating_systems": {
-      "Server": [
-        {
-          "name": "Arch Linux",
-          "versions": [
-            {
-              "id": "343",
-              "version": "Arch Linux 64 bits",
-              "price": "0.00"
+  "response": [
+    {
+      "action": "get_overview",
+      "return": {
+        "result": "success",
+        "response": {
+          "server_info": {
+            "os": {
+              "name": "ubuntu",
+              "version": "16.10-server",
+              "display": "Ubuntu 14.04 LTS, 32 bits",
+              "panel_url": null
+            },
+            "power": "ON",
+            "boot_mode": "normal",
+            "last_reboot": "2019-07-17T21:14:19.000Z",
+            "hardware_watch": true,
+            "network": {
+              "ip": [
+                "1.1.1.1"
+              ],
+              "private": [
+              ],
+              "ipfo": [
+                "1.1.1.1"
+              ]
+            },
+            "ip": [
+              {
+                "address": "1.1.1.1",
+                "type": "public",
+                "reverse": "server.exemple.ca.",
+                "mac": "b1:ac:1f:11:11:cb",
+                "switch_port_state": "up"
+              },
+              {
+                "address": "1.1.1.1",
+                "type": "failover",
+                "reverse": "1-1-1-1.op.oneprovider.ca.",
+                "mac": "00:10:11:01:a1:1b",
+                "destination": "1.1.1.1",
+                "status": "active"
+              }
+            ],
+            "raid_controllers": [
+              {
+                "raid_level": "NORAID",
+                "min": 1
+              },
+              {
+                "raid_level": "RAID0",
+                "min": 2
+              },
+              {
+                "raid_level": "RAID1",
+                "min": 2
+              }
+            ],
+            "rescue_credentials": {
+              "login": null,
+              "password": null,
+              "protocol": null,
+              "ip": null
+            },
+            "bmc": {
+              "session_key": null
+            },
+            "install_status": "installing",
+            "domain": "exemple.com",
+            "next_due_date": "2020-02-12",
+            "status": "Active",
+            "isIPMICompatible": true,
+            "raid_level": "RAID1"
+          },
+          "operating_systems": {
+            "Server": {
+              "1": {
+                "name": "Arch Linux",
+                "versions": [
+                  {
+                    "id": "343",
+                    "version": "Arch Linux 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "2": {
+                "name": "CentOS",
+                "versions": [
+                  {
+                    "id": "296",
+                    "version": "CentOS 6.7 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "297",
+                    "version": "CentOS 6.7 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "305",
+                    "version": "CentOS 7.2 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "5": {
+                "name": "Debian",
+                "versions": [
+                  {
+                    "id": "252",
+                    "version": "Debian 7 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "328",
+                    "version": "Debian 8 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "7": {
+                "name": "Fedora",
+                "versions": [
+                  {
+                    "id": "331",
+                    "version": "Fedora 22 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "332",
+                    "version": "Fedora 22 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "339",
+                    "version": "Fedora 23 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "340",
+                    "version": "Fedora 23 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "354",
+                    "version": "Fedora 24 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "355",
+                    "version": "Fedora 24 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "363",
+                    "version": "Fedora 25 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "8": {
+                "name": "FreeBSD",
+                "versions": [
+                  {
+                    "id": "359",
+                    "version": "FreeBSD 10.3 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "358",
+                    "version": "FreeBSD 11.0 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "16": {
+                "name": "Ubuntu",
+                "versions": [
+                  {
+                    "id": "243",
+                    "version": "Ubuntu 12.04 LTS 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "244",
+                    "version": "Ubuntu 12.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "301",
+                    "version": "Ubuntu 14.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "302",
+                    "version": "Ubuntu 14.04 LTS 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "348",
+                    "version": "Ubuntu 16.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "349",
+                    "version": "Ubuntu 16.04 LTS 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "360",
+                    "version": "Ubuntu 16.10 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "64": {
+                "name": "windows",
+                "versions": [
+                  {
+                    "id": "294",
+                    "version": "Windows Datacenter 2012 R2 64 bits",
+                    "price": "1.00"
+                  },
+                  {
+                    "id": "181",
+                    "version": "Windows Server Datacenter 2008R2 en-US 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "182",
+                    "version": "Windows Server Datacenter 2008R2 fr-FR 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "179",
+                    "version": "Windows Server Standard 2008R2 en-US 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "180",
+                    "version": "Windows Server Standard 2008R2 fr-FR 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "295",
+                    "version": "Windows Standard 2012 R2 64 bits",
+                    "price": "10.00"
+                  }
+                ]
+              }
+            },
+            "Virtualization": {
+              "3": {
+                "name": "CoreOS",
+                "versions": [
+                  {
+                    "id": "314",
+                    "version": "CoreOS - alpha 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "313",
+                    "version": "CoreOS - beta 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "312",
+                    "version": "CoreOS - stable 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "6": {
+                "name": "ESXi",
+                "versions": [
+                  {
+                    "id": "226",
+                    "version": "ESXi 5.0.0 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "281",
+                    "version": "ESXi 5.1.0 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "14": {
+                "name": "Proxmox",
+                "versions": [
+                  {
+                    "id": "338",
+                    "version": "Proxmox 4 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              }
+            },
+            "Panel": {
+              "4": {
+                "name": "cPanel",
+                "versions": [
+                  {
+                    "id": "344",
+                    "version": "cPanel 11.52 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              }
+            },
+            "Desktop": {
+              "9": {
+                "name": "Kubuntu",
+                "versions": [
+                  {
+                    "id": "255",
+                    "version": "KUbuntu 12.04 LTS 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "256",
+                    "version": "Kubuntu 12.04 LTS 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "10": {
+                "name": "Lubuntu",
+                "versions": [
+                  {
+                    "id": "309",
+                    "version": "Lubuntu 14.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "353",
+                    "version": "Lubuntu 16.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "361",
+                    "version": "Lubuntu 16.10 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "20": {
+                "name": "Ubuntu",
+                "versions": [
+                  {
+                    "id": "253",
+                    "version": "Ubuntu 12.04 LTS 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "254",
+                    "version": "Ubuntu 12.04 LTS 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              },
+              "18": {
+                "name": "Xubuntu",
+                "versions": [
+                  {
+                    "id": "257",
+                    "version": "XUbuntu 12.04 LTS 32 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "258",
+                    "version": "XUbuntu 12.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "308",
+                    "version": "Xubuntu 14.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "352",
+                    "version": "Xubuntu 16.04 LTS 64 bits",
+                    "price": "0.00"
+                  },
+                  {
+                    "id": "362",
+                    "version": "Xubuntu 16.10 64 bits",
+                    "price": "0.00"
+                  }
+                ]
+              }
             }
-          ]
-        },
-        {
-          "name": "CentOS",
-          "versions": [
+          },
+          "rescue_images": [
+            "winpe-3.0_amd64",
+            "winpe-5.1_amd64",
+            "ubuntu-14.04_amd64",
+            "freebsd_10.1_amd64",
+            "freebsd_10.2_amd64",
+            "freebsd_11.0_amd64",
+            "ubuntu-16.04_amd64",
+            "ubuntu-18.04_amd64"
+          ],
+          "abuse_list": [
+            [
+            ]
+          ],
+          "bmc": [
+          ],
+          "ddos_list": [
             {
-              "id": "305",
-              "version": "CentOS 7 64 bits",
-              "price": "0.00"
-            }
-          ]
-        },
-        {
-          "name": "Debian",
-          "versions": [
-            {
-              "id": "368",
-              "version": "Debian 9 64 bits",
-              "price": "0.00"
-            }
-          ]
-        },
-        {
-          "name": "Ubuntu",
-          "versions": [
-            {
-              "id": "373",
-              "version": "Ubuntu 18.04 LTS (The Bionic Beaver) 64 bits",
-              "price": "0.00"
-            }
-          ]
-        },
-        {
-          "name": "Windows",
-          "versions": [
-            {
-              "id": "294",
-              "version": "Windows Datacenter 2012 R2 64 bits",
-              "price": "300.00"
+              "id": "5507118",
+              "target": "1.1.1.1",
+              "start": "2021-01-28 12:08:45",
+              "end": "2021-01-28 20:12:15 00:00:00",
+              "mitigation": "sevi",
+              "type": "IP Fragmentation,UDP,DNS Amplification",
+              "max_pps": "924141",
+              "max_bps": "2147483647"
             },
             {
-              "id": "295",
-              "version": "Windows Standard 2012 R2 64 bits",
-              "price": "45.00"
+              "id": "5506072",
+              "target": "1.1.1.1",
+              "start": "2021-01-28 02:14:45",
+              "end": "2021-01-28 22:14:45",
+              "mitigation": "sevi",
+              "type": "IP Fragmentation,TCP SYN,TCP RST,Total Traffic,UDP",
+              "max_pps": "3298942",
+              "max_bps": "2147483647"
             }
           ]
         }
-      ],
-      "Virtualization": [
+      }
+    },
+    {
+      "action": "boot_normal",
+      "return": {
+        "result": "success",
+        "response": "Boot mode was changed to Normal."
+      }
+    },
+    {
+      "action": "boot_rescue",
+      "params": [
         {
-          "name": "ESXi",
-          "versions": [
+          "name": "image",
+          "type": "string",
+          "description": "Rescue image"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Boot mode was changed to Rescue."
+      }
+    },
+    {
+      "action": "boot_test",
+      "return": {
+        "result": "success",
+        "response": "Boot mode was changed to Test."
+      }
+    },
+    {
+      "action": "reverse_modify",
+      "params": [
+        {
+          "name": "address",
+          "type": "string",
+          "description": "IP address (or multiple comma-separated IP addresses)"
+        },
+        {
+          "name": "reverse",
+          "type": "string",
+          "description": "Reverse (use the value false to revert to the default reverse)"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Reverse was successfully changed."
+      }
+    },
+    {
+      "action": "reboot",
+      "params": [
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "Reason of the reboot"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Server reboot has started. The operation could take up to 3 minutes to be complete."
+      }
+    },
+    {
+      "action": "ipmi_auth",
+      "return": "\"{\\n        \\\"result\\\": \\\"success\\\",\\n        \\\"response\\\": {\\n          \\\"message\\\": \\\"Authentication details successfully obtained.\\\",\\n          \\\"credentials\\\": {\\n            \\\"url\\\": \\\"http:\\\\\\\/\\\\\\\/2.65.9.1\\\",\\n            \\\"login\\\": \\\"sd-01234\\\",\\n            \\\"password\\\": \\\"50m3pa55\\\",\\n            \\\"expiration\\\": \\\"2015-03-26T22:42:46.000Z\\\",\\n            \\\"status\\\": \\\"TO_CREATE|ACTIVE|TO_DELETE\\\"\\n          }\\n        }\\n      }\""
+    },
+    {
+      "action": "ipmi_session",
+      "params": [
+        {
+          "name": "ip",
+          "type": "string",
+          "description": "Authorized IP"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": {
+          "message": "Authentication details successfully obtained.",
+          "credentials": {
+            "url": "http:\/\/2.65.9.1",
+            "login": "sd-01234",
+            "password": "50m3pa55",
+            "expiration": "2015-03-26T22:42:46.000Z",
+            "status": "TO_CREATE|ACTIVE|TO_DELETE"
+          }
+        }
+      }
+    },
+    {
+      "action": "ipmi_delete",
+      "return": {
+        "result": "success",
+        "response": "IPMI session was successfully deleted. Please wait 1 minute before creating a new session for the operation to be completed."
+      }
+    },
+    {
+      "action": "generate_mac",
+      "params": [
+        {
+          "name": "address",
+          "type": "string",
+          "description": "Failover IP"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "\u2018vmware\u2019 (00:50:56), \u2018xen\u2019 (00:16:3e), or \u2018kvm\u2019 (52:54:00)"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": {
+          "message": "Mac address successfully generated.",
+          "ip": "124.124.124.124",
+          "mac": "00: 50: 56: 00: 7d: 2d"
+        }
+      }
+    },
+    {
+      "action": "delete_mac",
+      "params": [
+        {
+          "name": "address",
+          "type": "string",
+          "description": "Failover IP"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": {
+          "message": "Mac address successfully deleted.",
+          "ip": "124.124.124.124"
+        }
+      }
+    },
+    {
+      "action": "duplicate_mac",
+      "params": [
+        {
+          "name": "address",
+          "type": "string",
+          "description": "Failover IP"
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "description": "Target Failover IP"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Mac address successfully duplicated."
+      }
+    },
+    {
+      "action": "get_failovers",
+      "return": {
+        "result": "success",
+        "response": {
+          "message": "Failover IPs successfully obtained.",
+          "failovers": [
             {
-              "id": "371",
-              "version": "ESXi 6.5.0d 64 bits",
-              "price": "0.00"
+              "ip": "111.111.111.111",
+              "status": "active",
+              "mac": null
             },
             {
-              "id": "394",
-              "version": "ESXi 6.5.0U3 64 bits",
-              "price": "0.00"
+              "ip": "222.222.222.222",
+              "status": "active",
+              "mac": null
             }
           ]
         }
-      ],
-      "Panel": [
-      ],
-      "Desktop": [
-      ]
+      }
     },
-    "rescue_images": [
-      "freebsd_10.1_amd64",
-      "freebsd_10.2_amd64",
-      "freebsd_11.0_amd64",
-      "ubuntu-14.04_amd64",
-      "ubuntu-16.04_amd64",
-      "ubuntu-18.04_amd64",
-      "winpe-3.0_amd64",
-      "winpe-5.1_amd64"
-    ],
+    {
+      "action": "assign_failover",
+      "params": [
+        {
+          "name": "source",
+          "type": "string",
+          "description": "Failover IP"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Failover IP successfully assigned."
+      }
+    },
+    {
+      "action": "unassign_failover",
+      "params": [
+        {
+          "name": "source",
+          "type": "string",
+          "description": "Failover IP"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Failover IP successfully unassigned."
+      }
+    },
+    {
+      "action": "toggle_failover",
+      "params": [
+        {
+          "name": "source",
+          "type": "string",
+          "description": "Failover IP"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Failover IP successfully assigned."
+      }
+    },
+    {
+      "action": "abuse_reply",
+      "params": [
+        {
+          "name": "abuse_id",
+          "type": "int",
+          "description": "Id of the abuse"
+        },
+        {
+          "name": "answer",
+          "type": "string",
+          "description": "Answer that will be sent to the abuse reporter"
+        },
+        {
+          "name": "solution",
+          "type": "string",
+          "description": "Description of the solution"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "Your abuse reply has been successfully sent."
+      }
+    },
+    {
+      "action": "change_raid",
+      "params": [
+        {
+          "name": "hardware_raid",
+          "type": "string",
+          "description": "Available RAID values can be retrieved from the raid_controllers attribute of server_info"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "You have successfully launched the RAID change."
+      }
+    },
+    {
+      "action": "reinstall",
+      "params": [
+        {
+          "name": "os_id",
+          "type": "int",
+          "description": "Operating system ID"
+        },
+        {
+          "name": "hostname",
+          "type": "string",
+          "description": "New hostname of the server"
+        },
+        {
+          "name": "username",
+          "type": "string",
+          "description": "New username"
+        },
+        {
+          "name": "password",
+          "type": "string",
+          "description": "New password"
+        },
+        {
+          "name": "panelPassword",
+          "type": "string",
+          "description": "(Optionnal) New password for panel"
+        },
+        {
+          "name": "disks",
+          "type": [
+            {
+              "name": "partitions",
+              "type": [
+                {
+                  "name": "type",
+                  "type": "string",
+                  "description": "The type of the partition can be Primary, Logical or Extended"
+                },
+                {
+                  "name": "software_raid",
+                  "type": "int",
+                  "description": "The raid level, depending on the number of disk, can be 0, 1, 5, 6, 10"
+                },
+                {
+                  "name": "filesystem",
+                  "type": "string",
+                  "description": "The Filesystem of the partition"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The Mountpoint of the partition"
+                },
+                {
+                  "name": "size",
+                  "type": "int",
+                  "description": "The Size of the partition"
+                }
+              ],
+              "description": "(Optionnal) The custom partition scheme to use for that disk"
+            }
+          ],
+          "description": "(Optionnal) The custom partition scheme to use for each disks"
+        },
+        {
+          "name": "softwareRaidEnabled",
+          "type": "bool",
+          "description": "(Optionnal) Whether or not the reinstallation use a provided custom partition scheme"
+        }
+      ],
+      "return": {
+        "result": "success",
+        "response": "You have successfully launched the server reinstallation.",
+        "invoiceid": "0"
+      }
+    }
+  ]
