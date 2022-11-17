@@ -1,0 +1,162 @@
+root@racknerd-742893:~# curl -H 'Api-Key: API_xxxxx' -H 'Client-Key: CK_xxxxx' -A 'OneApi/1.0' https://api.oneprovider.com/server/action -d"server_id=服务器ID&action=get_overview"
+{
+  "result": "success",
+  "response": {
+    "server_info": {
+      "os": {
+        "name": "debian",
+        "version": "9",
+        "display": "Debian 9, 64 bits",
+        "panel_url": ""
+      },
+      "power": "ON",
+      "boot_mode": "normal",
+      "last_reboot": "2022-11-17T20:30:54.000Z",
+      "hardware_watch": true,
+      "network": {
+        "ip": [
+          "195.154.250.113"
+        ],
+        "private": [
+        ],
+        "ipfo": [
+          "51.158.29.55"
+        ]
+      },
+      "ip": [
+        {
+          "address": "195.154.250.113",
+          "type": "public",
+          "reverse": "195-154-250-113.rev.poneytelecom.eu.",
+          "mac": "b8:ac:6f:94:c5:b0",
+          "switch_port_state": "up"
+        },
+        {
+          "address": "51.158.29.55",
+          "type": "failover",
+          "reverse": "51-158-29-55.rev.poneytelecom.eu.",
+          "mac": "52:54:00:01:01:72",
+          "destination": "195.154.250.113",
+          "status": "active"
+        }
+      ],
+      "raid_controllers": [
+        {
+          "raid_level": "NORAID",
+          "min": 1
+        },
+        {
+          "raid_level": "RAID0",
+          "min": 2
+        },
+        {
+          "raid_level": "RAID1",
+          "min": 2
+        }
+      ],
+      "rescue_credentials": {
+        "login": null,
+        "password": null,
+        "protocol": null,
+        "ip": null
+      },
+      "bmc": {
+        "session_key": null
+      },
+      "install_status": "installed",
+      "domain": "localhost",
+      "next_due_date": "2023-01-31",
+      "status": "Active",
+      "isIPMICompatible": "1",
+      "raid_level": "NORAID"
+    },
+    "operating_systems": {
+      "Server": [
+        {
+          "name": "Arch Linux",
+          "versions": [
+            {
+              "id": "343",
+              "version": "Arch Linux 64 bits",
+              "price": "0.00"
+            }
+          ]
+        },
+        {
+          "name": "CentOS",
+          "versions": [
+            {
+              "id": "305",
+              "version": "CentOS 7 64 bits",
+              "price": "0.00"
+            }
+          ]
+        },
+        {
+          "name": "Debian",
+          "versions": [
+            {
+              "id": "368",
+              "version": "Debian 9 64 bits",
+              "price": "0.00"
+            }
+          ]
+        },
+        {
+          "name": "Ubuntu",
+          "versions": [
+            {
+              "id": "373",
+              "version": "Ubuntu 18.04 LTS (The Bionic Beaver) 64 bits",
+              "price": "0.00"
+            }
+          ]
+        },
+        {
+          "name": "Windows",
+          "versions": [
+            {
+              "id": "294",
+              "version": "Windows Datacenter 2012 R2 64 bits",
+              "price": "300.00"
+            },
+            {
+              "id": "295",
+              "version": "Windows Standard 2012 R2 64 bits",
+              "price": "45.00"
+            }
+          ]
+        }
+      ],
+      "Virtualization": [
+        {
+          "name": "ESXi",
+          "versions": [
+            {
+              "id": "371",
+              "version": "ESXi 6.5.0d 64 bits",
+              "price": "0.00"
+            },
+            {
+              "id": "394",
+              "version": "ESXi 6.5.0U3 64 bits",
+              "price": "0.00"
+            }
+          ]
+        }
+      ],
+      "Panel": [
+      ],
+      "Desktop": [
+      ]
+    },
+    "rescue_images": [
+      "freebsd_10.1_amd64",
+      "freebsd_10.2_amd64",
+      "freebsd_11.0_amd64",
+      "ubuntu-14.04_amd64",
+      "ubuntu-16.04_amd64",
+      "ubuntu-18.04_amd64",
+      "winpe-3.0_amd64",
+      "winpe-5.1_amd64"
+    ],
